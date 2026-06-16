@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://d30e4ntnahv7y"]
+[gd_scene format=3 uid="uid://d30e4ntnahv7y"]
 
 [ext_resource type="Texture2D" uid="uid://bp2um10jvhq4o" path="res://assets/RiichiAsset/RiichiAssetByGambleMountain/sheet.png" id="1_q66up"]
-[ext_resource type="Script" path="res://dice.gd" id="2_sdoww"]
+[ext_resource type="Script" uid="uid://b417wtuk8wq2i" path="res://dice.gd" id="2_sdoww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ap5t4"]
 size = Vector2(10, 12)
 
-[node name="Dice" type="Sprite2D"]
+[node name="Dice" type="Sprite2D" unique_id=677809350]
 scale = Vector2(3, 3)
 texture = ExtResource("1_q66up")
 hframes = 9
 vframes = 24
 script = ExtResource("2_sdoww")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1381065165]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.0
@@ -21,9 +21,9 @@ offset_top = -13.0
 offset_right = 9.0
 offset_bottom = 13.0
 
-[node name="Area2D" type="Area2D" parent="." groups=["dice"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=1138809953 groups=["dice"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=412555366]
 shape = SubResource("RectangleShape2D_ap5t4")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

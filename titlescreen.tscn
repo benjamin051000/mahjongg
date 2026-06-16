@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0nbsm2vp3yub"]
+[gd_scene format=3 uid="uid://c0nbsm2vp3yub"]
 
-[ext_resource type="Script" path="res://titlescreen.gd" id="1_iuth6"]
+[ext_resource type="Script" uid="uid://rqbsxlaigla5" path="res://titlescreen.gd" id="1_iuth6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bjrgl"]
 font_size = 32
 
-[node name="TitleScreen" type="Node2D"]
+[node name="TitleScreen" type="Node2D" unique_id=157873855]
 script = ExtResource("1_iuth6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1383321786]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12549, 0.364706, 0.2, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=478711461]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -36,7 +36,7 @@ by Benjamin Wheeler"
 label_settings = SubResource("LabelSettings_bjrgl")
 horizontal_alignment = 1
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="." unique_id=264304248]
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
@@ -49,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "New Game"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="." unique_id=1912394017]
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5

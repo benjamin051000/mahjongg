@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://d28ygsur3ukhm"]
+[gd_scene format=3 uid="uid://d28ygsur3ukhm"]
 
 [ext_resource type="Texture2D" uid="uid://bp2um10jvhq4o" path="res://assets/RiichiAsset/RiichiAssetByGambleMountain/sheet.png" id="1_4cug1"]
-[ext_resource type="Script" path="res://tile.gd" id="1_5r03k"]
+[ext_resource type="Script" uid="uid://bgq1b8q5gadwg" path="res://tile.gd" id="1_5r03k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ap5t4"]
 size = Vector2(18, 26)
 
-[node name="Tile" type="Sprite2D"]
+[node name="Tile" type="Sprite2D" unique_id=347568368]
 scale = Vector2(3, 3)
 texture = ExtResource("1_4cug1")
 hframes = 9
@@ -14,7 +14,7 @@ vframes = 24
 frame = 62
 script = ExtResource("1_5r03k")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1362423340]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.0
@@ -22,9 +22,9 @@ offset_top = -13.0
 offset_right = 9.0
 offset_bottom = 13.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=2104784791]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1338977376]
 visible = false
 shape = SubResource("RectangleShape2D_ap5t4")
 

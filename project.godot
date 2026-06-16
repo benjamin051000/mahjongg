@@ -13,7 +13,7 @@ config_version=5
 config/name="Mah Jongg"
 config/description="American Mah Jongg"
 run/main_scene="res://mahjongg.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -31,10 +31,6 @@ window/size/viewport_height=900
 movie_writer/movie_file="/home/benjamin/src/mahjongg/movies/demo.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [input]
 

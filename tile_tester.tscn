@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpsdkl4scl01i"]
+[gd_scene format=3 uid="uid://dpsdkl4scl01i"]
 
-[ext_resource type="Script" path="res://tile_tester.gd" id="1_7pb2c"]
+[ext_resource type="Script" uid="uid://iuypkwvmecna" path="res://tile_tester.gd" id="1_7pb2c"]
 
 [sub_resource type="Theme" id="Theme_ijqpn"]
 default_font_size = 50
 
-[node name="TileTester" type="Node2D"]
+[node name="TileTester" type="Node2D" unique_id=673890164]
 script = ExtResource("1_7pb2c")
 
-[node name="StepLabel" type="Label" parent="."]
+[node name="StepLabel" type="Label" parent="." unique_id=796514764]
 offset_left = 266.0
 offset_top = 16.0
 offset_right = 1365.0

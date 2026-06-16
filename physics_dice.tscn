@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://3kfbmqerk0sc"]
+[gd_scene format=3 uid="uid://3kfbmqerk0sc"]
 
 [ext_resource type="Texture2D" uid="uid://bp2um10jvhq4o" path="res://assets/RiichiAsset/RiichiAssetByGambleMountain/sheet.png" id="1_8l01m"]
-[ext_resource type="Script" path="res://physics_dice.gd" id="1_x58fy"]
+[ext_resource type="Script" uid="uid://csemw48y0niwn" path="res://physics_dice.gd" id="1_x58fy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4iwd"]
 size = Vector2(10, 12)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" unique_id=62055158]
 position = Vector2(764, 379)
 input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_x58fy")
 render_shadow = false
 
-[node name="Shadow" type="ColorRect" parent="."]
+[node name="Shadow" type="ColorRect" parent="." unique_id=1080766611]
 offset_left = -15.0
 offset_top = -18.0
 offset_right = -5.0
@@ -22,11 +22,11 @@ scale = Vector2(3, 3)
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439209411]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_x4iwd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=611637193]
 scale = Vector2(3, 3)
 texture = ExtResource("1_8l01m")
 hframes = 9

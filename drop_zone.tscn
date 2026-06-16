@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnkwehf8xt3iu"]
+[gd_scene format=3 uid="uid://cnkwehf8xt3iu"]
 
-[ext_resource type="Script" path="res://drop_zone.gd" id="1_hoch6"]
+[ext_resource type="Script" uid="uid://bmgqmfdnts3oo" path="res://drop_zone.gd" id="1_hoch6"]
 
-[node name="drop_zone" type="Marker2D" groups=["zone"]]
+[node name="drop_zone" type="Marker2D" unique_id=198002685 groups=["zone"]]
 script = ExtResource("1_hoch6")

@@ -44,7 +44,7 @@ var selected = false
 var in_hand = false
 
 # Debug flag to skip the lerping.
-const INSTANT_MOVEMENT := true
+const INSTANT_MOVEMENT := false
 
 var rest_point: Vector2:  # Where the tile returns when `selected == false`
 	set(new):
