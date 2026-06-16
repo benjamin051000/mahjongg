@@ -33,8 +33,8 @@ func set_faceup(new: bool):
 	_update_sprite()
 
 # The "orientation" of the tile (see perspective dicts)
-var perspective: Common.TilePerspective: 
-	set(new):
+var perspective: Common.TilePerspective: set = set_perspective
+func set_perspective(new):
 		perspective = new
 		_update_sprite()
 ########################################

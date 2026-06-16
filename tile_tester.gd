@@ -46,36 +46,36 @@ func _ready():
 func test_tile_perspective():
 	spawn_tiles()
 	
-	get_tree().call_group("tiles", "turn_face_up")
+	get_tree().call_group("tiles", "set_faceup", true)
 	$StepLabel.text = "up"
 	await get_tree().create_timer(1).timeout
-	for persp in ["bottom", "top", "left", "right"]:
+	for persp in Common.TilePerspective.values():
 		get_tree().call_group("tiles", "set_perspective", persp)
-		get_tree().call_group("tiles", "turn_face_up")
-		$StepLabel.text = "up " + persp
+		get_tree().call_group("tiles", "set_faceup", true)
+		$StepLabel.text = "up " + Common.TilePerspective.keys()[persp]
 		await get_tree().create_timer(1).timeout 
 	
-	get_tree().call_group("tiles", "turn_face_down")
+	get_tree().call_group("tiles", "set_faceup", false)
 	$StepLabel.text = "down"
 	await get_tree().create_timer(1).timeout
-	for persp in ["bottom", "top", "left", "right"]:
+	for persp in Common.TilePerspective.values():
 		get_tree().call_group("tiles", "set_perspective", persp)
-		get_tree().call_group("tiles", "turn_face_down")
-		$StepLabel.text = "down " + persp
+		get_tree().call_group("tiles", "set_faceup", false)
+		$StepLabel.text = "down " + Common.TilePerspective.keys()[persp]
 		await get_tree().create_timer(1).timeout 
 	
 	$StepLabel.text = "repetition test..."
 	await get_tree().create_timer(1).timeout 
 	
 	# Test back and forth
-	for persp in ["bottom", "top", "left", "right"]:
+	for persp in Common.TilePerspective.values():
 		get_tree().call_group("tiles", "set_perspective", persp)
 		for i in 2:
-			get_tree().call_group("tiles", "turn_face_up")
-			$StepLabel.text = "up " + persp
+			get_tree().call_group("tiles", "set_faceup", true)
+			$StepLabel.text = "up " + Common.TilePerspective.keys()[persp]
 			await get_tree().create_timer(1).timeout 
-			get_tree().call_group("tiles", "turn_face_down")
-			$StepLabel.text = "down " + persp
+			get_tree().call_group("tiles", "set_faceup", false)
+			$StepLabel.text = "down " + Common.TilePerspective.keys()[persp]
 			await get_tree().create_timer(1).timeout 
 	
 	get_tree().quit()
