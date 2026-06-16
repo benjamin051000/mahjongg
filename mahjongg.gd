@@ -129,7 +129,7 @@ func build_vertical_wall(
 		# Extra step: we need to bring the right ones to the front.
 		for i in range(0, tiles_in_this_wall.size(), 2):
 			# Going through the even ones only
-			tiles_in_this_wall[i].bring_to_front()
+			tiles_in_this_wall[i].move_to_front()
 			await get_tree().process_frame
 		return tiles_in_this_wall
 
