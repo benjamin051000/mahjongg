@@ -188,6 +188,7 @@ func spawn_dice() -> int:
 func _ready():
 	SignalBus.new_game.connect(_on_new_game)
 	spawn_tiles()
+	$TitleScreen.move_to_front()
 	#main_menu_animation()
 
 func _on_new_game():
