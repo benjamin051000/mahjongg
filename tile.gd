@@ -38,6 +38,12 @@ func set_faceup(new: bool):
 var perspective: Common.TilePerspective: set = set_perspective
 func set_perspective(new):
 		perspective = new
+		if perspective in [Common.TilePerspective.LEFT, Common.TilePerspective.RIGHT]:
+			$Area2D/VertCollisionShape2D.disabled = true
+			$Area2D/HorizCollisionShape2D.disabled = false
+		else:
+			$Area2D/VertCollisionShape2D.disabled = false
+			$Area2D/HorizCollisionShape2D.disabled = true
 		_update_sprite()
 ########################################
 

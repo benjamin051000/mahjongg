@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ap5t4"]
 size = Vector2(18, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx4y2"]
+size = Vector2(21, 26)
+
 [node name="Tile" type="Sprite2D" unique_id=347568368]
 scale = Vector2(3, 3)
 texture = ExtResource("1_4cug1")
@@ -24,8 +27,13 @@ offset_bottom = 13.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2104784791]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1338977376]
-visible = false
+[node name="VertCollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1338977376]
 shape = SubResource("RectangleShape2D_ap5t4")
+
+[node name="HorizCollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=161105829]
+position = Vector2(-2.1855694e-08, 0.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_vx4y2")
+disabled = true
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
