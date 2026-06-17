@@ -197,19 +197,35 @@ func _on_new_game():
 	var tiles_wall_order = await build_wall()
 	# TODO this is just a bandaid solution... build_wall should probably be 
 	# awaitable and have some sort of signal that pops when it's done building.
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.3).timeout
 	create_hands()
 	var first_col_offset = await spawn_dice()
 	deal(tiles_wall_order, first_col_offset)
 	
-func deal(tiles_wall_order: Array, _first_col_offset: int):
+func deal(tiles_wall_order: Array, first_col_offset: int):
 	# TODO the first player is always you, but it should (in the future) be the
 	# player with the highest dice roll.
 	
 	#var tiles: Array = get_tree().get_nodes_in_group("tiles")
-	for tile in tiles_wall_order:
-		tile.faceup = true
-		await get_tree().create_timer(0.2).timeout
+	# for tile in tiles_wall_order:
+	var HandPoints: Array[Node2D] = [$HandPoint0, $HandPoint1, $HandPoint2, $HandPoint3]
+	
+	var first_tile_offset_top = first_col_offset*2
+	# Go in groups of 4
+	for i in range(first_tile_offset_top, first_tile_offset_top+(4*12), 4):
+		var four_tiles: Array = tiles_wall_order.slice(i, i+4)
+		
+		@warning_ignore("integer_division")
+		var handpoint = HandPoints[(i/4)%4]
+		print(handpoint.position)
+
+		# Move the tiles
+		for tile in four_tiles:
+			@warning_ignore("integer_division")
+			tile.rest_point = handpoint.position + Vector2(i/4*20, 0)
+			
+		
+		await get_tree().create_timer(.75).timeout
 		#tile.faceup = false
 		#await get_tree().create_timer(0.5).timeout
 		

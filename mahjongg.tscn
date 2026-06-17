@@ -18,3 +18,15 @@ metadata/_edit_lock_ = true
 
 [node name="TitleScreen" parent="." unique_id=330586581 instance=ExtResource("4_bf3qt")]
 position = Vector2(800, 400)
+
+[node name="HandPoint0" type="Node2D" parent="." unique_id=1564400801]
+position = Vector2(709, 646)
+
+[node name="HandPoint1" type="Node2D" parent="." unique_id=1451323004]
+position = Vector2(352, 428)
+
+[node name="HandPoint2" type="Node2D" parent="." unique_id=2001429155]
+position = Vector2(707, 163)
+
+[node name="HandPoint3" type="Node2D" parent="." unique_id=1578486213]
+position = Vector2(992, 415)

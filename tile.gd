@@ -1,4 +1,6 @@
+class_name Tile 
 extends Sprite2D
+
 
 # TODO use this, maybe via a subclass of Tile for normal and honor tiles?
 #enum HonorValue {
