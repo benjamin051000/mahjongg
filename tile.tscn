@@ -26,6 +26,7 @@ offset_right = 9.0
 offset_bottom = 13.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2104784791]
+visible = false
 
 [node name="VertCollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1338977376]
 shape = SubResource("RectangleShape2D_ap5t4")
