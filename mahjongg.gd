@@ -147,10 +147,10 @@ func build_wall() -> Array[Node]:
 	# TODO Tiles is not consumed after these... I assume it's an array of refs so 
 	# it's probably cheap to copy into these functions
 	# UH MAYBE NOT ACTUALLY
-	var bottom_idxs = await build_horizontal_wall(Common.wall_length, tiles, 325, 900-140, -20, Vector2i(52, 0), true) # lower
-	var left_idxs = await build_vertical_wall(Common.wall_length, tiles,   325-21*3, 50, -20, Vector2i(0, 52-12), true) # left
-	var top_idxs = await build_horizontal_wall(Common.wall_length, tiles, 325, 60, -20, Vector2i(52, 0), false) # upper
-	var right_idxs = await build_vertical_wall(Common.wall_length, tiles,   1600-325+17*3, 50, -20, Vector2i(0, 52-12), false) # right
+	var bottom_idxs = await build_horizontal_wall(Common.wall_length, tiles, 325, 900-140, -5, Vector2i(52, 0), true) # lower
+	var left_idxs = await build_vertical_wall(Common.wall_length, tiles, 325-21*3, 50, -20, Vector2i(0, 52-12), true) # left
+	var top_idxs = await build_horizontal_wall(Common.wall_length, tiles, 325, 60, -5, Vector2i(52, 0), false) # upper
+	var right_idxs = await build_vertical_wall(Common.wall_length, tiles, 1600-325+17*3, 50, -20, Vector2i(0, 52-12), false) # right
 	
 	# We need the new ordering of the tiles in further steps. Return it here
 	return bottom_idxs + left_idxs + top_idxs + right_idxs
