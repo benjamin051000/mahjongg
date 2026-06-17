@@ -164,10 +164,19 @@ func _on_hand_collect_tile_into_hand(tile: Area2D, lerp_to: Vector2) -> void:
 	if tile != $Area2D:
 		return
 	
+	move_to_front()
+	
 	in_hand = true
+
 	
 	print("[Tile] updating rest point...")
 	rest_point = lerp_to
+	
+	await get_tree().create_timer(0.5).timeout
+	perspective = Common.TilePerspective.TOP
+	await get_tree().create_timer(0.1).timeout
+	faceup = true
+	
 
 
 func _on_hand_remove_tile_from_hand(tile: Area2D):
