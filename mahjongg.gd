@@ -155,9 +155,10 @@ func build_wall() -> Array[Node]:
 	# We need the new ordering of the tiles in further steps. Return it here
 	return bottom_idxs + left_idxs + top_idxs + right_idxs
 
+var your_hand
 func create_hands():
 	const hand_scene = preload("res://hand.tscn")
-	var your_hand = hand_scene.instantiate()
+	your_hand = hand_scene.instantiate()
 	your_hand.position = Vector2i(800, 855)
 	add_child(your_hand)
 
@@ -210,13 +211,17 @@ func deal(tiles_wall_order: Array, first_col_offset: int):
 	# for tile in tiles_wall_order:
 	var HandPoints: Array[Node2D] = [$HandPoint0, $HandPoint1, $HandPoint2, $HandPoint3]
 	
+	var eachPlayersTiles = [[], [], [], []]
+	
 	var first_tile_offset_top = first_col_offset*2
 	# Go in groups of 4
 	for i in range(first_tile_offset_top, first_tile_offset_top+(4*12), 4):
 		var four_tiles: Array = tiles_wall_order.slice(i, i+4)
 		
 		@warning_ignore("integer_division")
-		var handpoint = HandPoints[(i/4)%4]
+		var player_i = (i/4) % 4
+		
+		var handpoint = HandPoints[player_i]
 		print(handpoint.position)
 
 		# Move the tiles
@@ -224,8 +229,15 @@ func deal(tiles_wall_order: Array, first_col_offset: int):
 			@warning_ignore("integer_division")
 			tile.rest_point = handpoint.position + Vector2(i/4*20, 0)
 			
+		# Add it to this player's tiles
+		eachPlayersTiles[player_i].append(four_tiles)
+			
 		
-		await get_tree().create_timer(.75).timeout
-		#tile.faceup = false
-		#await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.5).timeout
+	
+	# Now, move all yours into your hand.
+	for four_tiles in eachPlayersTiles[0]:
+		for tile in four_tiles:
+			tile.rest_point = your_hand.position
+			await get_tree().create_timer(0.1).timeout
 		
