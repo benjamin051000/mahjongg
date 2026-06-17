@@ -202,7 +202,7 @@ func _on_new_game():
 	var first_col_offset = await spawn_dice()
 	deal(tiles_wall_order, first_col_offset)
 	
-func deal(tiles_wall_order: Array, first_col_offset: int):
+func deal(tiles_wall_order: Array, _first_col_offset: int):
 	# TODO the first player is always you, but it should (in the future) be the
 	# player with the highest dice roll.
 	

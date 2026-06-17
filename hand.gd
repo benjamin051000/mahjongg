@@ -11,6 +11,7 @@ const MAX_HAND_SIZE = 14
 # TODO find a way to fetch this dynamically
 const TILE_PADDING = 4 # on both sides of one tile (so 2x in-between two tiles)
 const WIDTH_PER_TILE = 52 + TILE_PADDING * 2
+@warning_ignore("integer_division")
 const hand_pad = TILE_PADDING + 52 / 2
 
 # This will assist us in reorganizing the tiles when a tile leaves the hand
